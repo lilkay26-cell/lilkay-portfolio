@@ -1,0 +1,684 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #f8fbff;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+::selection {
+  background: #0866ff;
+  color: white;
+}
+
+/* =========================================================
+   HERO ORBITS
+========================================================= */
+
+.orbit {
+  animation: orbitRotate 16s linear infinite;
+}
+
+.orbit-reverse {
+  animation: orbitRotateReverse 11s linear infinite;
+}
+
+.orbit-light {
+  position: absolute;
+  top: 50%;
+  right: -6px;
+  width: 12px;
+  height: 12px;
+  transform: translateY(-50%);
+  border-radius: 999px;
+  background: #0866ff;
+  box-shadow:
+    0 0 10px #0866ff,
+    0 0 25px rgba(8, 102, 255, 0.8),
+    0 0 50px rgba(8, 102, 255, 0.4);
+}
+
+.orbit-light.cyan {
+  background: #22d3ee;
+  box-shadow:
+    0 0 10px #22d3ee,
+    0 0 25px rgba(34, 211, 238, 0.8),
+    0 0 50px rgba(34, 211, 238, 0.4);
+}
+
+@keyframes orbitRotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes orbitRotateReverse {
+  from {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+/* =========================================================
+   FLOATING HERO OBJECTS
+========================================================= */
+
+.float-one {
+  animation: floatingOne 5s ease-in-out infinite;
+}
+
+.float-two {
+  animation: floatingTwo 6s ease-in-out infinite;
+}
+
+.float-three {
+  animation: floatingThree 4s ease-in-out infinite;
+}
+
+.float-four {
+  animation: floatingFour 5s ease-in-out infinite;
+}
+
+@keyframes floatingOne {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(-3deg);
+  }
+
+  50% {
+    transform: translateY(-16px) rotate(3deg);
+  }
+}
+
+@keyframes floatingTwo {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(3deg);
+  }
+
+  50% {
+    transform: translateY(15px) rotate(-3deg);
+  }
+}
+
+@keyframes floatingThree {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+@keyframes floatingFour {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(14px);
+  }
+}
+
+/* =========================================================
+   MOVING LINE
+========================================================= */
+
+.line-travel {
+  animation: lineMove 4s linear infinite;
+}
+
+@keyframes lineMove {
+  from {
+    transform: translateX(-200px);
+  }
+
+  to {
+    transform: translateX(100vw);
+  }
+}
+
+/* =========================================================
+   PROCESS PARTICLE
+========================================================= */
+
+.process-particle {
+  position: absolute;
+  top: 26px;
+  left: 7%;
+  z-index: 5;
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: #22d3ee;
+  box-shadow:
+    0 0 10px #22d3ee,
+    0 0 25px rgba(34, 211, 238, 0.8);
+  animation: processTravel 6s linear infinite;
+}
+
+@keyframes processTravel {
+  0% {
+    left: 7%;
+  }
+
+  100% {
+    left: 92%;
+  }
+}
+
+/* =========================================================
+   TECH NETWORK
+========================================================= */
+
+.network-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 5;
+  display: flex;
+  width: 105px;
+  height: 105px;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #071426;
+  box-shadow:
+    0 20px 60px rgba(37, 99, 235, 0.2),
+    0 0 50px rgba(37, 99, 235, 0.12);
+}
+
+.tech-node {
+  position: absolute;
+  z-index: 6;
+  display: flex;
+  min-width: 95px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(147, 197, 253, 0.5);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  padding: 10px 15px;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
+  font-size: 11px;
+  font-weight: 800;
+  color: #334155;
+  backdrop-filter: blur(10px);
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.tech-node:hover {
+  border-color: #0866ff;
+  color: #0866ff;
+  box-shadow: 0 15px 40px rgba(37, 99, 235, 0.18);
+}
+
+.tech-node-1 {
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+.tech-node-2 {
+  right: 0;
+  top: 20%;
+}
+
+.tech-node-3 {
+  right: 2%;
+  bottom: 15%;
+}
+
+.tech-node-4 {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tech-node-5 {
+  bottom: 15%;
+  left: 2%;
+}
+
+.tech-node-6 {
+  left: 0;
+  top: 20%;
+}
+
+.network-line {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 1px;
+  width: 160px;
+  transform-origin: left center;
+  background: linear-gradient(
+    90deg,
+    rgba(8, 102, 255, 0.5),
+    rgba(34, 211, 238, 0.05)
+  );
+}
+
+.network-line-1 {
+  transform: rotate(-90deg);
+}
+
+.network-line-2 {
+  transform: rotate(-30deg);
+}
+
+.network-line-3 {
+  transform: rotate(30deg);
+}
+
+.network-line-4 {
+  transform: rotate(90deg);
+}
+
+.network-line-5 {
+  transform: rotate(150deg);
+}
+
+.network-line-6 {
+  transform: rotate(210deg);
+}
+
+/* =========================================================
+   PROJECT BROWSER
+========================================================= */
+
+.project-card {
+  box-shadow: 0 10px 40px rgba(15, 23, 42, 0.03);
+}
+
+.project-card:hover {
+  box-shadow: 0 35px 100px rgba(37, 99, 235, 0.12);
+}
+
+.project-light {
+  position: absolute;
+  left: -150px;
+  top: 0;
+  z-index: 20;
+  height: 2px;
+  width: 150px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #0866ff,
+    #22d3ee,
+    transparent
+  );
+  opacity: 0;
+}
+
+.project-card:hover .project-light {
+  opacity: 1;
+  animation: projectLight 2.2s linear infinite;
+}
+
+@keyframes projectLight {
+  from {
+    left: -150px;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
+.browser-window {
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 25px 70px rgba(15, 23, 42, 0.12);
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.project-card:hover .browser-window {
+  transform: translateY(-5px);
+  box-shadow: 0 35px 90px rgba(37, 99, 235, 0.18);
+}
+
+.browser-bar {
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  padding: 0 14px;
+  border-bottom: 1px solid #e2e8f0;
+  background: white;
+}
+
+.browser-dot {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+}
+
+/* =========================================================
+   TERMINAL
+========================================================= */
+
+.terminal-card {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.035);
+  box-shadow:
+    0 30px 100px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 17px;
+  vertical-align: middle;
+  background: #22d3ee;
+  animation: cursorBlink 1s steps(1) infinite;
+}
+
+@keyframes cursorBlink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+
+  46%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 640px) {
+  .network-line {
+    width: 100px;
+  }
+
+  .tech-node {
+    min-width: 78px;
+    padding: 8px 10px;
+    font-size: 9px;
+  }
+
+  .network-center {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  filter: blur(4px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease,
+    filter 0.8s ease;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+
+/* =========================================================
+   AMBIENT BACKGROUND
+========================================================= */
+
+.ambient-blue {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 999px;
+  filter: blur(120px);
+  opacity: 0.12;
+}
+
+.ambient-one {
+  left: -250px;
+  top: 15%;
+  background: #0866ff;
+  animation: ambientMoveOne 16s ease-in-out infinite;
+}
+
+.ambient-two {
+  right: -250px;
+  top: 55%;
+  background: #22d3ee;
+  animation: ambientMoveTwo 19s ease-in-out infinite;
+}
+
+@keyframes ambientMoveOne {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(120px, 80px);
+  }
+}
+
+@keyframes ambientMoveTwo {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-120px, -100px);
+  }
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.ambient-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.025;
+  background-image:
+    linear-gradient(#0866ff 1px, transparent 1px),
+    linear-gradient(90deg, #0866ff 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+
+/* =========================================================
+   SECTION TRANSITION
+========================================================= */
+
+.section-glow {
+  position: relative;
+}
+
+.section-glow::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 80%;
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(8, 102, 255, 0.25),
+    rgba(34, 211, 238, 0.25),
+    transparent
+  );
+}
+
+
+/* =========================================================
+   FLOATING DECORATIVE DOT
+========================================================= */
+
+.decor-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #22d3ee;
+  box-shadow:
+    0 0 10px #22d3ee,
+    0 0 25px rgba(34, 211, 238, 0.5);
+  animation: decorFloat 5s ease-in-out infinite;
+}
+
+@keyframes decorFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+
+/* =========================================================
+   SOFT BLUE SHIMMER
+========================================================= */
+
+.blue-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.blue-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 40%;
+  transform: translateX(-150%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.18),
+    transparent
+  );
+  animation: blueShimmer 5s linear infinite;
+}
+
+@keyframes blueShimmer {
+  0% {
+    transform: translateX(-150%);
+  }
+
+  45%,
+  100% {
+    transform: translateX(300%);
+  }
+}
+
+
+/* =========================================================
+   MOBILE POLISH
+========================================================= */
+
+@media (max-width: 640px) {
+  .ambient-blue {
+    width: 280px;
+    height: 280px;
+    filter: blur(80px);
+  }
+
+  .ambient-one {
+    left: -180px;
+  }
+
+  .ambient-two {
+    right: -180px;
+  }
+
+  .ambient-grid {
+    background-size: 50px 50px;
+  }
+
+  .reveal {
+    transform: translateY(22px);
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+
+  .ambient-blue,
+  .decor-dot,
+  .blue-shimmer::after {
+    animation: none !important;
+  }
+}
