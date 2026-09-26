@@ -147,7 +147,7 @@ function Contact() {
             >
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
-                  <label className="text-sm font-bold">Lilkay</label>
+                  <label className="text-sm font-bold">Your Name</label>
 
                   <input
                     type="text"
